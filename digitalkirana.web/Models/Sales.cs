@@ -9,10 +9,8 @@ namespace digitalkirana.web.Models
         public int CustomerId { get; set; }
         public Customer? Customer { get; set; }
 
-        [Required]
         public Decimal GrandTotal { get; set; }
 
-        [Required]
         public DateTime Date { get; set; }
 
         public Decimal Tax { get; set; }

@@ -252,6 +252,9 @@ namespace digitalkirana.web.Migrations
                     b.Property<string>("ApplicationUserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -264,9 +267,6 @@ namespace digitalkirana.web.Migrations
                     b.Property<int>("SalesId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SupplierId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 
@@ -274,11 +274,11 @@ namespace digitalkirana.web.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
+                    b.HasIndex("CustomerId");
+
                     b.HasIndex("ProductId");
 
                     b.HasIndex("SalesId");
-
-                    b.HasIndex("SupplierId");
 
                     b.ToTable("SalesDetails");
                 });
@@ -659,6 +659,12 @@ namespace digitalkirana.web.Migrations
                         .WithMany()
                         .HasForeignKey("ApplicationUserId");
 
+                    b.HasOne("digitalkirana.web.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("digitalkirana.web.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
@@ -671,19 +677,13 @@ namespace digitalkirana.web.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("digitalkirana.web.Models.Supplier", "Supplier")
-                        .WithMany()
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("ApplicationUser");
+
+                    b.Navigation("Customer");
 
                     b.Navigation("Product");
 
                     b.Navigation("Sales");
-
-                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("digitalkirana.web.Models.Supplier", b =>

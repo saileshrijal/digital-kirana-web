@@ -325,7 +325,7 @@ namespace digitalkirana.web.Migrations
                     Rate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SupplierId = table.Column<int>(type: "int", nullable: false),
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
                     AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     SalesId = table.Column<int>(type: "int", nullable: false)
@@ -339,6 +339,12 @@ namespace digitalkirana.web.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
+                        name: "FK_SalesDetails_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_SalesDetails_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
@@ -348,12 +354,6 @@ namespace digitalkirana.web.Migrations
                         name: "FK_SalesDetails_Sales_SalesId",
                         column: x => x.SalesId,
                         principalTable: "Sales",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SalesDetails_Suppliers_SupplierId",
-                        column: x => x.SupplierId,
-                        principalTable: "Suppliers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -506,6 +506,11 @@ namespace digitalkirana.web.Migrations
                 column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SalesDetails_CustomerId",
+                table: "SalesDetails",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SalesDetails_ProductId",
                 table: "SalesDetails",
                 column: "ProductId");
@@ -514,11 +519,6 @@ namespace digitalkirana.web.Migrations
                 name: "IX_SalesDetails_SalesId",
                 table: "SalesDetails",
                 column: "SalesId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SalesDetails_SupplierId",
-                table: "SalesDetails",
-                column: "SupplierId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Suppliers_ApplicationUserId",

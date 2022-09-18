@@ -6,7 +6,6 @@ namespace digitalkirana.web.Models
     {
         public int Id { get; set; }
 
-        [Required, Display(Name = "Product Name")]
         public string? ProductName { get; set; }
 
         public int CategoryId { get; set; }
@@ -14,7 +13,6 @@ namespace digitalkirana.web.Models
 
         public string? Description { get; set; }
 
-        [Required]
         public Decimal Rate { get; set; }
 
         public int Quantity { get; set; }
@@ -22,7 +20,6 @@ namespace digitalkirana.web.Models
         public string? ApplicationUserId { get; set; }
         public ApplicationUser? ApplicationUser { get; set; }
 
-        [Required, Display(Name = "Added Date")]
         public DateTime AddedDate { get; set; }
     }
 }

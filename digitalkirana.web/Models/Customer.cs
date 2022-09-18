@@ -15,7 +15,6 @@ namespace digitalkirana.web.Models
 
         public string? Address { get; set; }
 
-        [Required]
         public string? ApplicationUserId { get; set; }
         public ApplicationUser? ApplicationUser { get; set; }
 

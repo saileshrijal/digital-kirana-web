@@ -6,7 +6,6 @@ namespace digitalkirana.web.Models
     {
         public int Id { get; set; }
 
-        [Required]
         public int CustomerId { get; set; }
         public Customer? Customer { get; set; }
 
@@ -20,7 +19,6 @@ namespace digitalkirana.web.Models
 
         public Decimal Discount { get; set; }
 
-        [Required]
         public string? ApplicationUserId { get; set; }
         public ApplicationUser? ApplicationUser { get; set; }
     }

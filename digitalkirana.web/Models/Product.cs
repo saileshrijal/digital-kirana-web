@@ -9,7 +9,6 @@ namespace digitalkirana.web.Models
         [Required, Display(Name = "Product Name")]
         public string? ProductName { get; set; }
 
-        [Required]
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
 
@@ -20,7 +19,6 @@ namespace digitalkirana.web.Models
 
         public int Quantity { get; set; }
 
-        [Required]
         public string? ApplicationUserId { get; set; }
         public ApplicationUser? ApplicationUser { get; set; }
 

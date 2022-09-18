@@ -11,7 +11,6 @@ namespace digitalkirana.web.Models
 
         public string? Description { get; set; }
 
-        [Required]
         public string? ApplicationUserId { get; set; }
         public ApplicationUser? ApplicationUser { get; set; }
 

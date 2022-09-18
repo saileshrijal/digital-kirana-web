@@ -18,8 +18,8 @@ namespace digitalkirana.web.Models
         [Required]
         public Decimal Total { get; set; }
 
-        public int SupplierId { get; set; }
-        public Supplier? Supplier { get; set; }
+        public int CustomerId { get; set; }
+        public Customer? Customer { get; set; }
 
         [Required]
         public DateTime AddedDate { get; set; }

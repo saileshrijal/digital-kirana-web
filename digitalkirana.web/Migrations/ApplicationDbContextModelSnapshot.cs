@@ -34,7 +34,6 @@ namespace digitalkirana.web.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ApplicationUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CategoryName")
@@ -66,7 +65,6 @@ namespace digitalkirana.web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ApplicationUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CustomerName")
@@ -134,7 +132,6 @@ namespace digitalkirana.web.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ApplicationUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Date")
@@ -173,7 +170,6 @@ namespace digitalkirana.web.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ApplicationUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("ProductId")
@@ -216,7 +212,6 @@ namespace digitalkirana.web.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ApplicationUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CustomerId")
@@ -255,7 +250,6 @@ namespace digitalkirana.web.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ApplicationUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("ProductId")
@@ -304,7 +298,6 @@ namespace digitalkirana.web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ApplicationUserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
@@ -562,9 +555,7 @@ namespace digitalkirana.web.Migrations
                 {
                     b.HasOne("digitalkirana.web.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApplicationUserId");
 
                     b.Navigation("ApplicationUser");
                 });
@@ -573,9 +564,7 @@ namespace digitalkirana.web.Migrations
                 {
                     b.HasOne("digitalkirana.web.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApplicationUserId");
 
                     b.Navigation("ApplicationUser");
                 });
@@ -601,9 +590,7 @@ namespace digitalkirana.web.Migrations
                 {
                     b.HasOne("digitalkirana.web.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApplicationUserId");
 
                     b.HasOne("digitalkirana.web.Models.Supplier", "Supplier")
                         .WithMany()
@@ -620,9 +607,7 @@ namespace digitalkirana.web.Migrations
                 {
                     b.HasOne("digitalkirana.web.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApplicationUserId");
 
                     b.HasOne("digitalkirana.web.Models.Product", "Product")
                         .WithMany()
@@ -655,9 +640,7 @@ namespace digitalkirana.web.Migrations
                 {
                     b.HasOne("digitalkirana.web.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApplicationUserId");
 
                     b.HasOne("digitalkirana.web.Models.Customer", "Customer")
                         .WithMany()
@@ -674,9 +657,7 @@ namespace digitalkirana.web.Migrations
                 {
                     b.HasOne("digitalkirana.web.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApplicationUserId");
 
                     b.HasOne("digitalkirana.web.Models.Product", "Product")
                         .WithMany()
@@ -709,9 +690,7 @@ namespace digitalkirana.web.Migrations
                 {
                     b.HasOne("digitalkirana.web.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ApplicationUserId");
 
                     b.Navigation("ApplicationUser");
                 });

@@ -24,11 +24,9 @@ namespace digitalkirana.web.Models
         [Required]
         public DateTime AddedDate { get; set; }
 
-        [Required]
         public string? ApplicationUserId { get; set; }
         public ApplicationUser? ApplicationUser { get; set; }
 
-        [Required]
         public int PurchaseId { get; set; }
         public Purchase? Purchase { get; set; }
     }

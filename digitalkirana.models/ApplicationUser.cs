@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
-namespace digitalkirana.web.Models
+namespace digitalkirana.models
 {
     public class ApplicationUser : IdentityUser
     {

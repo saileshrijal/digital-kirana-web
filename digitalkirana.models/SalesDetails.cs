@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace digitalkirana.web.Models
+namespace digitalkirana.models
 {
     public class SalesDetails
     {
@@ -24,6 +25,6 @@ namespace digitalkirana.web.Models
         public ApplicationUser? ApplicationUser { get; set; }
 
         public int SalesId { get; set; }
-        public Sales? Sales { get; set; }
+        public Sales Sales { get; set; }
     }
 }

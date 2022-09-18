@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace digitalkirana.web.Models
+namespace digitalkirana.models
 {
     public class PurchaseDetails
     {

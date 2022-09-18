@@ -1,13 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace digitalkirana.web.Models
+namespace digitalkirana.models
 {
-    public class Purchase
+    public class Sales
     {
         public int Id { get; set; }
 
-        public int SupplierId { get; set; }
-        public Supplier? Supplier { get; set; }
+        public int CustomerId { get; set; }
+        public Customer? Customer { get; set; }
 
         public Decimal GrandTotal { get; set; }
 
@@ -19,5 +19,6 @@ namespace digitalkirana.web.Models
 
         public string? ApplicationUserId { get; set; }
         public ApplicationUser? ApplicationUser { get; set; }
+
     }
 }

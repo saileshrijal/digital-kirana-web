@@ -1,8 +1,8 @@
-﻿using digitalkirana.web.Models;
+﻿using digitalkirana.models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace digitalkirana.web.Data;
+namespace digitalkirana.web.data;
 
 public class ApplicationDbContext : IdentityDbContext
 {
